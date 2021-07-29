@@ -27,11 +27,11 @@ def initialize():
         if "y" in install_deps_prompt.lower():
             os.system(install_pydeps_command)
             os.system(install_sysdeps_command)
-            _ = subprocess.call('clear' if os.name =='posix' else 'cls')
+            # _ = subprocess.call('clear' if os.name =='posix' else 'cls',shell= True)
             print("Done. Re-run gmail-controller to continue!")
             exit()
         else:
-            _ = subprocess.call('clear' if os.name =='posix' else 'cls')
+            # _ = subprocess.call('clear' if os.name =='posix' else 'cls',shell= True)
             print("Exiting...")
             exit()
 
@@ -40,7 +40,7 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.readonly', 'https://www.googlea
 
 def clear():
     import os, subprocess
-    _ = subprocess.call('clear' if os.name =='posix' else 'cls')
+    _ = subprocess.call('clear' if os.name =='posix' else 'cls',shell= True)
 
 def removeHtml(text):
     import re
